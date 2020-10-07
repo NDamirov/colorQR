@@ -1,3 +1,3 @@
-from .field import *
+from .polynom import *
 
 initial_fill()
