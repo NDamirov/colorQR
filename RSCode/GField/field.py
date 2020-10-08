@@ -60,7 +60,7 @@ def divide(x, y):
     return exp[255 + log[x] - log[y]]
 
 # x^y, y >= 0
-def pow(x, y):
+def f_pow(x, y):
     return exp[(log[x] * y) % 255]
 
 # x^(-1)
