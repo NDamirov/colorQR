@@ -60,7 +60,7 @@ def pol_get(p, x):
     res = p[0]
     # p(x) = (((p[0] * x) + p[1]) * x).... + p[len(p) - 1]
     # called Horner's method
-    for i in range(len(p)):
+    for i in range(1, len(p)):
         res = multiply(res, x) ^ p[i]
 
     return res
