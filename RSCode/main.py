@@ -71,7 +71,7 @@ def error_locator(synd):
 
 # find errors using locator polynom
 # simple brutforce
-def find(loc, msl): # msl = len(msg_in) = len(msg) - add
+def _find(loc, msl): # msl = len(msg_in) = len(msg) - add
     amount = len(loc) - 1
     positions = []
     for i in range(msl):
@@ -83,6 +83,23 @@ def find(loc, msl): # msl = len(msg_in) = len(msg) - add
 
     return positions
 
-# Forney's algorithm
-def fix():
-    pass
+
+# get positions
+def find(msg, add):
+    synd = syndrome(msg, add)
+    loc = error_locator(synd)
+    return _find(loc[::-1], len(msg))
+
+# brutforce fix
+def simple_fix(msg, add):
+    last = find(msg, add)
+    for i in last:
+        msg[i] = 0
+    last = find(msg, add)
+    for i in last:
+        msg[i] = 1
+    while not check(msg, add):
+        last = find(msg, add)
+        msg[last[0]] = multiply(msg[last[0]], 2)
+    return msg
+
