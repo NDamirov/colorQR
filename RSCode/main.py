@@ -100,6 +100,7 @@ def simple_fix(msg, add):
         msg[i] = 1
     while not check(msg, add):
         last = find(msg, add)
-        msg[last[0]] = multiply(msg[last[0]], 2)
+        for i in last:
+            msg[i] = multiply(msg[i], 2)
     return msg
 
