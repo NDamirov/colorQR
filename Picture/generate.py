@@ -2,8 +2,6 @@ from PIL import Image
 from random import randint
 
 def get_color(x):
-    if (x == -1):
-        x = randint(0, 3)
     if (x == 0):
         return (70, 70, 70)
     if (x == 1):
@@ -31,9 +29,8 @@ def generate(msg, name='output'):
     # unite all numbers in one
     bits = 0
     for i in msg[2:]:
-        bits *= 256
+        bits <<= 8
         bits += i
-
     # generate angles
     # TODO: fix
     for i in range(8):

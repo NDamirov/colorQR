@@ -8,6 +8,6 @@ if len(msg) > 54:
     sys.exit(0)
 
 enc = [len(msg), tp]
-msg = [ord(c) for c in msg] + [0] * (54 - len(msg))
-enc += RSCode.encode(msg, 10)
+msg = [ord(c) for c in msg]
+enc += RSCode.encode(msg, 64 - len(msg))
 Picture.generate(enc)
