@@ -46,6 +46,9 @@ def decode(name='temp.png'):
                 res = i
 
         return res
+    
+    def frequent(a):
+        return sorted(a)[len(a) // 2]
 
     # setting angle colors
     t = [(0, 0, 0) for i in range(4)]
@@ -70,13 +73,13 @@ def decode(name='temp.png'):
             arr[i][j] = find_square(i, j)
 
     length = 0
-    length ^= arr[7][-8 - 1] ^ arr[-8 - 1][-8 - 1] ^ arr[-8 - 1][7]
+    length ^= frequent([arr[7][-8 - 1], arr[-8 - 1][-8 - 1], arr[-8 - 1][7]])
     length <<= 2
-    length ^= arr[7][8] ^ arr[-7 - 1][-8 - 1] ^ arr[8][-7 - 1]
+    length ^= frequent([arr[7][8], arr[-7 - 1][-8 - 1], arr[8][-7 - 1]])
     length <<= 2
-    length ^= arr[8][8] ^ arr[-8 - 1][8] ^ arr[8][-8 - 1]
+    length ^= frequent([arr[8][8], arr[-8 - 1][8], arr[8][-8 - 1]])
     length <<= 2
-    length ^= arr[8][7] ^ arr[-7 - 1][8] ^ arr[-8 - 1][-7 - 1]
+    length ^= frequent([arr[8][7], arr[-7 - 1][8], arr[-8 - 1][-7 - 1]])
     
     usd[8][7] = usd[-7 - 1][8] = usd[-8 - 1][-7 - 1] = True
     usd[8][8] = usd[-8 - 1][8] = usd[8][-8 - 1] = True
