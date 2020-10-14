@@ -13,7 +13,7 @@ def get_color(x):
 
 
 # msg = [length, type, message]
-def generate(msg, name='output'):
+def generate(msg, name='temp.png'):
     # generate field and image
     arr = [[-1] * 23 for i in range(23)]
     sz = 30
@@ -61,4 +61,4 @@ def generate(msg, name='output'):
         for j in range(23):
             set_pixel(i, j, get_color(arr[i][j]))
 
-    img.save('temp.png')
+    img.save(name)
