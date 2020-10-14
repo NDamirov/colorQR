@@ -4,6 +4,6 @@ Field with size 23x23: 4 squares 8x8 for detection, 255 squares for 64 byte-bloc
 ## Instruction
 To decode use `python decode.py` (decodes 'temp.png') \
 To encode use `python encode.py`, type value doesn't matter for now.
-Examples:
+## Examples
 ![Black and white version](https://github.com/NDamirov/colorQR/blob/master/black_white.png?raw=true)
 ![Colorful version](https://github.com/NDamirov/colorQR/blob/master/colors.png?raw=true)
