@@ -5,7 +5,7 @@ def detect(name="temp.png"):
     (w, h) = img.size
 
     # constants
-    col_similar = 50
+    col_similar = 60
     col_similar_big = 100
     delta = 0.8
 
@@ -72,13 +72,13 @@ def detect(name="temp.png"):
             if len(right_start) > 3:
                 break
 
-        if len(left_groups) == 0:
+        if len(left_groups) == 0 or len(right_groups) == 0:
             return False
 
         left_start = left_start[::-1]
         left_groups = left_groups[::-1]
 
-        if similar(left_groups[-1][0], right_groups[0][0], col_similar):
+        if similar(left_groups[-1][0], right_groups[0][0], col_similar_big):
             right_groups[0] = (right_groups[0][0], right_groups[0][1] + left_groups.pop()[1])
         
         result_groups = []
@@ -89,14 +89,16 @@ def detect(name="temp.png"):
             if i == 3:
                 isLeft = False
             if isLeft:
+                if len(left_groups) == 0:
+                    return False
                 result_groups = [left_groups.pop()] + result_groups
                 result_start = [left_start.pop()] + result_start
             else:
+                if right_index >= len(right_groups):
+                    return False
                 result_groups += [right_groups[right_index]]
                 result_start += [right_start[right_index]]
                 right_index += 1
-
-        print(result_groups)
 
         # haha, classic
         groups = result_groups
@@ -106,7 +108,6 @@ def detect(name="temp.png"):
                 similar(groups[0][0], groups[4][0], col_similar_big) and 
                 similar(groups[1][0], groups[3][0], col_similar_big) and
                 similar(groups[1][0], groups[5][0], col_similar_big)):
-            print('aaa')
             return False
         
         if not (abs(groups[0][1] / groups[1][1] - ratio[0] / ratio[1]) < delta and 
@@ -114,13 +115,13 @@ def detect(name="temp.png"):
                 abs(groups[2][1] / groups[3][1] - ratio[2] / ratio[3]) < delta and
                 abs(groups[3][1] / groups[4][1] - ratio[3] / ratio[4]) < delta and
                 abs(groups[4][1] / groups[5][1] - ratio[4] / ratio[5]) < delta):
-            print('bbb')
             return False
 
         ind = 0
         while ratio[ind] != 3:
             ind += 1
-
+        
+        # print(start)
         return start[ind] + groups[ind][1] // 2
 
 
@@ -162,11 +163,21 @@ def detect(name="temp.png"):
                         abs(groups[i + 3][1] / groups[i + 4][1] - ratio[3] / ratio[4]) < delta and
                         abs(groups[i + 4][1] / groups[i + 5][1] - ratio[4] / ratio[5]) < delta):
                     continue
-                cen_row = gr_start[i + 2] + groups[i + 2][1] // 2
+                
+                if ratio[2] == 3:
+                    cen_row = gr_start[i + 2] + groups[i + 2][1] // 2
+                else:
+                    cen_row = gr_start[i + 3] + groups[i + 3][1] // 2
+                print(col, cen_row)
                 cen_col = get_row(col, cen_row, row_ratio)
-                if cen_col :
+                # print(cen_row, cen_col)
+                if cen_col:
                     img.putpixel((cen_col, cen_row), (0, 0, 0))
-                    return
-
-    find([1, 1, 3, 1, 1, 1], [1, 1, 3, 1, 1, 1])
+                    return (cen_col, cen_row)
+                    
+    angles = [find([1, 1, 3, 1, 1, 1], [1, 1, 3, 1, 1, 1]),
+              find([1, 1, 3, 1, 1, 1], [1, 1, 1, 3, 1, 1]),
+              find([1, 1, 1, 3, 1, 1], [1, 1, 1, 3, 1, 1]),
+              find([1, 1, 1, 3, 1, 1], [1, 1, 3, 1, 1, 1])]
+    # print(angles)
     img.save("decoded.png")
