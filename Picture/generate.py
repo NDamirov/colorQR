@@ -3,12 +3,12 @@ from random import randint
 
 def get_color(x):
     if (x == 0):
-        return (70, 70, 70)
+        return (255, 0, 0)
     if (x == 1):
-        return (140, 140, 140)
+        return (0, 255, 0)
     if (x == 2):
-        return (210, 210, 210)
-    return (0, 0, 0)
+        return (0, 0, 255)
+    return (255, 255, 255)
 
 
 

@@ -29,7 +29,7 @@ class Detection:
             return (col[0] / div, col[1] / div, col[2] / div)
 
         def near(a, b):
-            return ((abs(a[0] - b[0]) < 10) and (abs(a[1] - b[1]) < 10))
+            return ((abs(a[0] - b[0]) < 30) and (abs(a[1] - b[1]) < 30))
 
         # serches for ratio in given row, starting with certain point
         def get_row(cx, cy, ratio):
@@ -134,7 +134,7 @@ class Detection:
             
             # print(start)
             # return start[ind] + groups[ind][1] // 2
-            return (start[0], start[-1] + groups[-1][1] - 1)
+            return (start[0], start[-1] + groups[-1][1])
 
 
         # searces for ratio in each column
@@ -194,21 +194,21 @@ class Detection:
         self.ld = (1e5, -1)
         self.ru = (-1, 1e5)
         self.rd = (-1, -1)
-        for an in angles:
-            for i in range(2):
-                for j in range(2):
-                    t = (an[0][i], an[1][j])
-                    if near(self.lu, t) or near(self.ld, t) or \
-                       near(self.ru, t) or near(self.rd, t):
-                        continue
-                    if t[0] <= self.lu[0] and t[1] <= self.lu[1]:
-                        self.lu = t
-                    elif t[0] <= self.ld[0] and t[1] >= self.ld[1]:
-                        self.ld = t
-                    elif t[0] >= self.ru[0] and t[1] <= self.ru[1]:
-                        self.ru = t
-                    elif t[0] >= self.rd[0] and t[1] >= self.rd[1]:
-                        self.rd = t
+        for ttt in range(4):
+            for an in angles:
+                for i in range(2):
+                    for j in range(2):
+                        t = (an[0][i], an[1][j])
+                        if t[0] + t[1] < self.lu[0] + self.lu[1]:
+                            self.lu = t
+                        elif t[0] - t[1] < self.ld[0] - self.ld[1]:
+                            self.ld = t
+                        elif -t[0] + t[1] < -self.ru[0] + self.ru[1]:
+                            self.ru = t
+                        elif -t[0] - t[1] < -self.rd[0] - self.rd[1]:
+                            self.rd = t
+
+        print(self.lu, self.ld, self.ru, self.rd)
         self.wth = (self.ru[0] - self.lu[0], self.ru[1] - self.lu[1])
         self.hht = (self.ld[0] - self.lu[0], self.ld[1] - self.lu[1])
         self.w = (self.wth[0] ** 2 + self.wth[1] ** 2) ** 0.5
@@ -237,4 +237,44 @@ class Detection:
                 cur += 1
 
         return (r // cur, g // cur, b // cur)
+
+    def find_square(self, i, j, t):
+        def find(col):
+            nonlocal t
+            mn = 255 * 3
+            res = 0
+            for i in range(4):
+                tmp = 0
+                for j in range(3):
+                    tmp += abs(t[i][j] - col[j])
+                if tmp < mn:
+                    res = i
+                    mn = tmp
+
+            return res
+
+        
+        
+        def p_add(a, b):
+            return (a[0] + b[0], a[1] + b[1])
+
+        def p_mult(a, x):
+            return (a[0] * x, a[1] * x)     
+
+        def get_pixel(a):
+            return self.img.getpixel((int(a[0]), int(a[1])))
+        
+        tmp = [0] * 4
+        for x in range(int(self.w / 23 * i), int(self.w / 23 * (i + 1))):
+            for y in range(int(self.h / 23 * j), int(self.h / 23 * (j + 1))):
+                p = p_add(self.lu, p_add(p_mult(self.wth, x / self.w), p_mult(self.hht, y / self.h)))
+                col = get_pixel(p)
+                tmp[find(col)] += 1
+
+        res = 0
+        for i in range(1, 4):
+            if tmp[i] > tmp[res]:
+                res = i
+
+        return res
         
