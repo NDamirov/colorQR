@@ -25,6 +25,560 @@ def generate(msg, name='temp.png'):
         for x in range(i * sz, (i + 1) * sz):
             for y in range(j * sz, (j + 1) * sz):
                 img.putpixel((x, y), col)
+    
+    def set_angles():
+        nonlocal arr
+        for i in range(0, 23):
+            for j in range (0, 23):
+                if i == 0 and j == 0:
+                    arr[i][j] = 0
+                if i == 0 and j == 1:
+                    arr[i][j] = 0
+                if i == 0 and j == 2:
+                    arr[i][j] = 0
+                if i == 0 and j == 3:
+                    arr[i][j] = 0
+                if i == 0 and j == 4:
+                    arr[i][j] = 0
+                if i == 0 and j == 5:
+                    arr[i][j] = 0
+                if i == 0 and j == 6:
+                    arr[i][j] = 0
+                if i == 0 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                if i == 1 and j == 0:
+                    arr[i][j] = 0
+                if i == 1 and j == 1:
+                    arr[i][j] = 1
+                if i == 1 and j == 2:
+                    arr[i][j] = 1
+                if i == 1 and j == 3:
+                    arr[i][j] = 1
+                if i == 1 and j == 4:
+                    arr[i][j] = 1
+                if i == 1 and j == 5:
+                    arr[i][j] = 1
+                if i == 1 and j == 6:
+                    arr[i][j] = 0
+                if i == 1 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                if i == 2 and j == 0:
+                    arr[i][j] = 0
+                if i == 2 and j == 1:
+                    arr[i][j] = 1
+                if i == 2 and j == 2:
+                    arr[i][j] = 0
+                if i == 2 and j == 3:
+                    arr[i][j] = 0
+                if i == 2 and j == 4:
+                    arr[i][j] = 0
+                if i == 2 and j == 5:
+                    arr[i][j] = 1
+                if i == 2 and j == 6:
+                    arr[i][j] = 0
+                if i == 2 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                if i == 3 and j == 0:
+                    arr[i][j] = 0
+                if i == 3 and j == 1:
+                    arr[i][j] = 1
+                if i == 3 and j == 2:
+                    arr[i][j] = 0
+                if i == 3  and j == 3:
+                    arr[i][j] = 0
+                if i == 3 and j == 4:
+                    arr[i][j] = 0
+                if i == 3 and j == 5:
+                    arr[i][j] = 1
+                if i == 3 and j == 6:
+                    arr[i][j] = 0
+                if i == 3 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                if i == 4 and j == 0:
+                    arr[i][j] = 0
+                if i == 4 and j == 1:
+                    arr[i][j] = 1
+                if i == 4 and j == 2:
+                    arr[i][j] = 0
+                if i == 4 and j == 3:
+                    arr[i][j] = 0
+                if i == 4 and j == 4:
+                    arr[i][j] = 0
+                if i == 4 and j == 5:
+                    arr[i][j] = 1
+                if i == 4 and j == 6:
+                    arr[i][j] = 0
+                if i == 4 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                if i == 5 and j == 0:
+                    arr[i][j] = 0
+                if i == 5 and j == 1:
+                    arr[i][j] = 1
+                if i == 5 and j == 2:
+                    arr[i][j] = 1
+                if i == 5 and j == 3:
+                    arr[i][j] = 1
+                if i == 5 and j == 4:
+                    arr[i][j] = 1
+                if i == 5 and j == 5:
+                    arr[i][j] = 1
+                if i == 5 and j == 6:
+                    arr[i][j] = 0
+                if i == 5 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                if i == 6 and j == 0:
+                    arr[i][j] = 0
+                if i == 6 and j == 1:
+                    arr[i][j] = 0
+                if i == 6 and j == 2:
+                    arr[i][j] = 0
+                if i == 6 and j == 3:
+                    arr[i][j] = 0
+                if i == 6 and j == 4:
+                    arr[i][j] = 0
+                if i == 6 and j == 5:
+                    arr[i][j] = 0
+                if i == 6 and j == 6:
+                    arr[i][j] = 0
+                if i == 6 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                if i == 7 and j == 0:
+                    arr[i][j] = 1
+                if i == 7 and j == 1:
+                    arr[i][j] = 1
+                if i == 7 and j == 2:
+                    arr[i][j] = 1
+                if i == 7 and j == 3:
+                    arr[i][j] = 1
+                if i == 7 and j == 4:
+                    arr[i][j] = 1
+                if i == 7 and j == 5:
+                    arr[i][j] = 1
+                if i == 7 and j == 6:
+                    arr[i][j] = 1
+                if i == 7 and j == 7:
+                    arr[i][j] = 1
+                    ###############
+                    ###############
+                    ###############
+                if i == 0 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 0 and j == 1 + 15:
+                    arr[i][j] = 1
+                if i == 0 and j == 2 + 15:
+                    arr[i][j] = 1
+                if i == 0 and j == 3 + 15:
+                    arr[i][j] = 1
+                if i == 0 and j == 4 + 15:
+                    arr[i][j] = 1
+                if i == 0 and j == 5 + 15:
+                    arr[i][j] = 1
+                if i == 0 and j == 6 + 15:
+                    arr[i][j] = 1
+                if i == 0 and j == 7 + 15:
+                    arr[i][j] = 1
+                    ###############
+                if i == 1 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 1 and j == 1 + 15:
+                    arr[i][j] = 1
+                if i == 1 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 1 and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 1 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 1 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 1 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 1 and j == 7 + 15:
+                    arr[i][j] = 1
+                    ###############
+                if i == 2 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 2 and j == 1 + 15:
+                    arr[i][j] = 1
+                if i == 2 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 2 and j == 3 + 15:
+                    arr[i][j] = 1
+                if i == 2 and j == 4 + 15:
+                    arr[i][j] = 1
+                if i == 2 and j == 5 + 15:
+                    arr[i][j] = 1
+                if i == 2 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 2 and j == 7 + 15:
+                    arr[i][j] = 1
+                    ###############
+                if i == 3 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 3 and j == 1 + 15:
+                    arr[i][j] = 1
+                if i == 3 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 3  and j == 3 + 15:
+                    arr[i][j] = 1
+                if i == 3 and j == 4 + 15:
+                    arr[i][j] = 1
+                if i == 3 and j == 5 + 15:
+                    arr[i][j] = 1
+                if i == 3 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 3 and j == 7 + 15:
+                    arr[i][j] = 1
+                    ###############
+                if i == 4 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 4 and j == 1 + 15:
+                    arr[i][j] = 1
+                if i == 4 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 4 and j == 3 + 15:
+                    arr[i][j] = 1
+                if i == 4 and j == 4 + 15:
+                    arr[i][j] = 1
+                if i == 4 and j == 5 + 15:
+                    arr[i][j] = 1
+                if i == 4 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 4 and j == 7 + 15:
+                    arr[i][j] = 1
+                    ###############
+                if i == 5 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 5 and j == 1 + 15:
+                    arr[i][j] = 1
+                if i == 5 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 5 and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 5 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 5 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 5 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 5 and j == 7 + 15:
+                    arr[i][j] = 1
+                    ###############
+                if i == 6 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 6 and j == 1 + 15:
+                    arr[i][j] = 1
+                if i == 6 and j == 2 + 15:
+                    arr[i][j] = 1
+                if i == 6 and j == 3 + 15:
+                    arr[i][j] = 1
+                if i == 6 and j == 4 + 15:
+                    arr[i][j] = 1
+                if i == 6 and j == 5 + 15:
+                    arr[i][j] = 1
+                if i == 6 and j == 6 + 15:
+                    arr[i][j] = 1
+                if i == 6 and j == 7 + 15:
+                    arr[i][j] = 1
+                    ###############
+                if i == 7 and j == 0 + 15:
+                    arr[i][j] = 3
+                if i == 7 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 7 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 7 and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 7 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 7 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 7 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 7 and j == 7 + 15:
+                    arr[i][j] = 3
+                        ###############
+                        ###############
+                        ###############
+                if i == 0 + 15 and j == 0:
+                    arr[i][j] = 0
+                if i == 0 + 15 and j == 1:
+                    arr[i][j] = 0
+                if i == 0 + 15 and j == 2:
+                    arr[i][j] = 0
+                if i == 0 + 15 and j == 3:
+                    arr[i][j] = 0
+                if i == 0 + 15 and j == 4:
+                    arr[i][j] = 0
+                if i == 0 + 15 and j == 5:
+                    arr[i][j] = 0
+                if i == 0 + 15 and j == 6:
+                    arr[i][j] = 0
+                if i == 0 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                if i == 1 + 15 and j == 0:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 1:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 2:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 3:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 4:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 5:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 6:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                if i == 2 + 15 and j == 0:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 1:
+                    arr[i][j] = 0
+                if i == 2 + 15 and j == 2:
+                    arr[i][j] = 0
+                if i == 2 + 15 and j == 3:
+                    arr[i][j] = 0
+                if i == 2 + 15 and j == 4:
+                    arr[i][j] = 0
+                if i == 2 + 15 and j == 5:
+                    arr[i][j] = 0
+                if i == 2 + 15 and j == 6:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                if i == 3 + 15 and j == 0:
+                    arr[i][j] = 2
+                if i == 3 + 15 and j == 1:
+                    arr[i][j] = 0
+                if i == 3 + 15 and j == 2:
+                    arr[i][j] = 2
+                if i == 3 + 15  and j == 3:
+                    arr[i][j] = 2
+                if i == 3 + 15 and j == 4:
+                    arr[i][j] = 2
+                if i == 3 + 15 and j == 5:
+                    arr[i][j] = 0
+                if i == 3 + 15 and j == 6:
+                    arr[i][j] = 2
+                if i == 3 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                if i == 4 + 15 and j == 0:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 1:
+                    arr[i][j] = 0
+                if i == 4 + 15 and j == 2:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 3:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 4:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 5:
+                    arr[i][j] = 0
+                if i == 4 + 15 and j == 6:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                if i == 5 + 15 and j == 0:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 1:
+                    arr[i][j] = 0
+                if i == 5 + 15 and j == 2:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 3:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 4:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 5:
+                    arr[i][j] = 0
+                if i == 5 + 15 and j == 6:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                if i == 6 + 15 and j == 0:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 1:
+                    arr[i][j] = 0
+                if i == 6 + 15 and j == 2:
+                    arr[i][j] = 0
+                if i == 6 + 15 and j == 3:
+                    arr[i][j] = 0
+                if i == 6 + 15 and j == 4:
+                    arr[i][j] = 0
+                if i == 6 + 15 and j == 5:
+                    arr[i][j] = 0
+                if i == 6 + 15 and j == 6:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                if i == 7 + 15 and j == 0:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 1:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 2:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 3:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 4:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 5:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 6:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 7:
+                    arr[i][j] = 0
+                    ###############
+                    ###############
+                    ###############
+                if i == 0 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 0 + 15 and j == 1 + 15:
+                    arr[i][j] = 2
+                if i == 0 + 15 and j == 2 + 15:
+                    arr[i][j] = 2
+                if i == 0 + 15 and j == 3 + 15:
+                    arr[i][j] = 2
+                if i == 0 + 15 and j == 4 + 15:
+                    arr[i][j] = 2
+                if i == 0 + 15 and j == 5 + 15:
+                    arr[i][j] = 2
+                if i == 0 + 15 and j == 6 + 15:
+                    arr[i][j] = 2
+                if i == 0 + 15 and j == 7 + 15:
+                    arr[i][j] = 2
+                    ###############
+                if i == 1 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 1 + 15 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 1 + 15 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 1 + 15 and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 1 + 15 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 1 + 15 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 1 + 15 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 1 + 15 and j == 7 + 15:
+                    arr[i][j] = 3
+                    ###############
+                if i == 2 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 2 + 15 and j == 2 + 15:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 3 + 15:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 4 + 15:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 5 + 15:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 6 + 15:
+                    arr[i][j] = 2
+                if i == 2 + 15 and j == 7 + 15:
+                    arr[i][j] = 3
+                    ###############
+                if i == 3 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 3 + 15 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 3 + 15 and j == 2 + 15:
+                    arr[i][j] = 2
+                if i == 3 + 15  and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 3 + 15 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 3 + 15 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 3 + 15 and j == 6 + 15:
+                    arr[i][j] = 2
+                if i == 3 + 15 and j == 7 + 15:
+                    arr[i][j] = 3
+                    ###############
+                if i == 4 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 4 + 15 and j == 2 + 15:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 4 + 15 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 4 + 15 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 4 + 15 and j == 6 + 15:
+                    arr[i][j] = 2
+                if i == 4 + 15 and j == 7 + 15:
+                    arr[i][j] = 3
+                    ###############
+                if i == 5 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 5 + 15 and j == 2 + 15:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 5 + 15 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 5 + 15 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 5 + 15 and j == 6 + 15:
+                    arr[i][j] = 2
+                if i == 5 + 15 and j == 7 + 15:
+                    arr[i][j] = 3
+                    ###############
+                if i == 6 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 6 + 15 and j == 2 + 15:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 3 + 15:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 4 + 15:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 5 + 15:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 6 + 15:
+                    arr[i][j] = 2
+                if i == 6 + 15 and j == 7 + 15:
+                    arr[i][j] = 3
+                    ###############
+                if i == 7 + 15 and j == 0 + 15:
+                    arr[i][j] = 2
+                if i == 7 + 15 and j == 1 + 15:
+                    arr[i][j] = 3
+                if i == 7 + 15 and j == 2 + 15:
+                    arr[i][j] = 3
+                if i == 7 + 15 and j == 3 + 15:
+                    arr[i][j] = 3
+                if i == 7 + 15 and j == 4 + 15:
+                    arr[i][j] = 3
+                if i == 7 + 15 and j == 5 + 15:
+                    arr[i][j] = 3
+                if i == 7 + 15 and j == 6 + 15:
+                    arr[i][j] = 3
+                if i == 7 + 15 and j == 7 + 15:
+                    arr[i][j] = 3
 
     # unite all numbers in one
     bits = 0
@@ -32,13 +586,7 @@ def generate(msg, name='temp.png'):
         bits <<= 8
         bits += i
     # generate angles
-    # TODO: fix
-    for i in range(8):
-        for j in range(8):
-            arr[i][j] = 0
-            arr[i][-j - 1] = 1
-            arr[-i - 1][j] = 2
-            arr[-i - 1][-j - 1] = 3
+    set_angles()
 
     # set length squares
     arr[8][7] = arr[-7 - 1][8] = arr[-8 - 1][-7 - 1] = (msg[0] & 3)
